@@ -10,27 +10,27 @@ namespace LogicalProgramming222
     {
         static void Main(string[] args)
         {
-             Console.WriteLine("Enter the number check perfect or not : ");
-            int num =Convert.ToInt32(Console.ReadLine());   
-            int temp = 0;
-            for (int i = 1; i < num; i++)
+            Console.WriteLine("Enter a number to check and confirm if its a prime number or not ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            int count = 0;
+            for (int i = 2; i < num / 2; i++)
             {
-                if (num%i==0)
+                if (num % i == 0)
                 {
-                    temp=temp+i;
+                    count++;
                 }
             }
-            if (temp == num)
+            if (count == 0)
             {
-                Console.WriteLine($"{num} is a perfect number");
-
+                Console.WriteLine($"{num} is a Prime number");
             }
             else
             {
-                Console.WriteLine($"{num} is not a perfect number");
+                Console.WriteLine($"{num} is a Non-Prime number");
+
             }
-            Console.ReadLine();  Console.WriteLine("Enter the number check perfect or not : ");
-           
+            Console.ReadLine();
+
         }
     }
 }
