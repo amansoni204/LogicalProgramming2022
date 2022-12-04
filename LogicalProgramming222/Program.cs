@@ -10,27 +10,33 @@ namespace LogicalProgramming222
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a number to check and confirm if its a prime number or not ");
-            int num = Convert.ToInt32(Console.ReadLine());
-            int count = 0;
-            for (int i = 2; i < num / 2; i++)
+            int firstNumber = 0;
+            int SecondNumber = 1;
+            int nextNumber;
+            int numberOfElements;
+
+            Console.WriteLine("Enter the number of element : ");
+            numberOfElements = Convert.ToInt32(Console.ReadLine());
+            if (numberOfElements < 2)
             {
-                if (num % i == 0)
-                {
-                    count++;
-                }
-            }
-            if (count == 0)
-            {
-                Console.WriteLine($"{num} is a Prime number");
+                Console.WriteLine("Enter the number greater than two : ");
             }
             else
             {
-                Console.WriteLine($"{num} is a Non-Prime number");
+                Console.WriteLine(firstNumber + " " + SecondNumber + " ");
+                for (int i = 2; i < numberOfElements; i++)
+                {
+                    nextNumber = firstNumber + SecondNumber;
+                    Console.Write(nextNumber + " ");
+                    firstNumber = SecondNumber;
+                    SecondNumber = nextNumber;
+                }
+                Console.ReadLine();
 
             }
-            Console.ReadLine();
-
         }
     }
+
 }
+        
+    
