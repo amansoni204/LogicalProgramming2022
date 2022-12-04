@@ -10,33 +10,24 @@ namespace LogicalProgramming222
     {
         static void Main(string[] args)
         {
-            int firstNumber = 0;
-            int SecondNumber = 1;
-            int nextNumber;
-            int numberOfElements;
-
-            Console.WriteLine("Enter the number of element : ");
-            numberOfElements = Convert.ToInt32(Console.ReadLine());
-            if (numberOfElements < 2)
+            Console.WriteLine("Enter number to get it reversed.");
+            int num = Convert.ToInt32(Console.ReadLine());
+            int revNum = 0;
+            Console.WriteLine($"Original number is {num}");
+            while (num != 0)
             {
-                Console.WriteLine("Enter the number greater than two : ");
+                int rem = num % 10;
+                revNum = (revNum * 10) + rem;
+                num = num / 10;
             }
-            else
-            {
-                Console.WriteLine(firstNumber + " " + SecondNumber + " ");
-                for (int i = 2; i < numberOfElements; i++)
-                {
-                    nextNumber = firstNumber + SecondNumber;
-                    Console.Write(nextNumber + " ");
-                    firstNumber = SecondNumber;
-                    SecondNumber = nextNumber;
-                }
-                Console.ReadLine();
+            Console.WriteLine($"Reverse number is {revNum}");
+            Console.ReadLine();
 
-            }
         }
+        }
+
     }
 
-}
+
         
     
